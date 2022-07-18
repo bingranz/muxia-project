@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>reservation page</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/dingfang/styles.css" />
+    <!--bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div
+      class="bg-image mask"
+      style="background-image: url(/index/homepage.jpeg); height: 100vh"
+    >
+      <div
+        class="mask"
+        style="background-color: rgba(0, 0, 0, 0.5); height: 100vh"
+      >
+        <section id="bookinginfo">
+          <div class="container-lg">
+            <br /><br />
+            <div class="text-center">
+              <h2 style="color: aliceblue">请填写您的预定信息</h2>
+            </div>
+            <div class="row justify-content-center my-5">
+              <div class="col-lg-6">
+                <form action="">
+                  <label for="name" class="form-label mt-4">姓名：</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="姓名"
+                  />
+                  <label for="phone" class="form-label mt-4">联系方式：</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    placeholder="微信或手机号"
+                  />
+                  <label for="room-type" class="form-label mt-4"
+                    >房间类型：</label
+                  >
+                  <select class="form-select" id="room-type">
+                    <option value="标准房">标准房</option>
+                    <option value="家庭房">家庭房</option>
+                    <option value="私汤房">私汤房</option>
+                    <option value="榻榻米房">榻榻米房</option>
+                    <option value="露台房">露台房</option>
+                    <option value="露台loft房">露台loft房</option>
+                  </select>
+                  <label for="check-in-date" class="form-label mt-4"
+                    >入住时间：</label
+                  >
+                  <input type="date" class="form-control" id="check-in-date" />
+                  <label for="check-out-date" class="form-label mt-3"
+                    >退房时间：</label
+                  >
+                  <input type="date" class="form-control" id="check-out-date" />
+                  <label class="form-label mt-4" for="comment">备注：</label
+                  ><br />
+                  <textarea
+                    class="form-control"
+                    id="comment"
+                    style="height: 70px"
+                  ></textarea>
+                  <div class="mb-4 text-center">
+                    <!-- Button trigger modal -->
+                    <button
+                      type="button"
+                      class="btn btn-secondary mt-4"
+                      data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop"
+                      onclick="showModal();"
+                    >
+                      提交
+                    </button>
+                    <!--modal-->
+                    <div
+                      class="modal fade"
+                      id="staticBackdrop"
+                      data-bs-backdrop="static"
+                      data-bs-keyboard="false"
+                      tabindex="-1"
+                      aria-labelledby="staticBackdropLabel"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">
+                              预订信息
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">
+                            <h2>请确认您的预订信息：</h2>
+                            <p>姓名： <span id="modal-name"></span></p>
+                            <p>联系方式： <span id="modal-phone"></span></p>
+                            <p>房间类型： <span id="modal-room-type"></span></p>
+                            <p>
+                              入住时间： <span id="modal-check-in-date"></span>
+                            </p>
+                            <p>
+                              退房时间： <span id="modal-check-out-date"></span>
+                            </p>
+                            <p>备注： <span id="modal-comment"></span></p>
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
+                            >
+                              返回修改
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary"
+                              data-bs-target="#exampleModalToggle2"
+                              data-bs-toggle="modal"
+                            >
+                              确认订房
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--second modal-->
+                    <div
+                      class="modal fade"
+                      id="exampleModalToggle2"
+                      aria-hidden="true"
+                      aria-labelledby="exampleModalToggleLabel2"
+                      tabindex="-1"
+                    >
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5
+                              class="modal-title"
+                              id="exampleModalToggleLabel2"
+                            >
+                              Modal 2
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>
+                              已提交您的订房申请，请关注手机信息，等候工作人员和您确认订房及付款信息，木下村19号欢迎您的光临。
+                            </p>
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              class="btn btn-secondary"
+                              data-bs-toggle="modal"
+                            >
+                              关闭
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--second modal end-->
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="back-button">
+              <a href="/index/index.html">
+                <button type="button" class="btn btn-light btn-lg">
+                  返回主页
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="/dingfang/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

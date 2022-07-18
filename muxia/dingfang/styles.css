@@ -1,0 +1,17 @@
+label {
+  color: aliceblue;
+}
+
+.back-button {
+  height: 0;
+  position: absolute;
+  top: 0;
+}
+/* .bg-image {
+  background: 0 0;
+  padding-bottom: 66%;
+  height: 0;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
